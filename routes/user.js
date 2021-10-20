@@ -24,7 +24,7 @@ const makeHash = async(plainText) => {
 }
 
 const inserUser = (dataUser) => {
-    return new Promise = ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         var new_user = new User({
             username: dataUser.username,
             password: dataUser.password
@@ -35,8 +35,8 @@ const inserUser = (dataUser) => {
             } else {
                 resolve({ message: 'Singn up successfully' })
             }
-        })
-    })
+        });
+    });
 }
 router.route('/signup')
     .post((req, res) => {

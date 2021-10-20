@@ -10,9 +10,9 @@ const config = {
 };
 
 expressApp.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200'),
-        res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,PATCH,DELETE,OPTIONS'),
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Option,Authorization')
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
+    res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,PATCH,DELETE,OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Option,Authorization')
     return next()
 });
 
@@ -29,9 +29,9 @@ expressApp.use((req, res, next) => {
         });
 });
 
-expressApp.use('/user', require('./router/user'))
-expressApp.use('/user', require('./router/signin'))
-expressApp.use('/user', require('./api/producys'))
+expressApp.use('/user', require('./routes/user'))
+expressApp.use('/login', require('./routes/signin'))
+expressApp.use('/api', require('./api/products'))
 
 expressApp.listen(3000, function() {
     console.log('Listening on port 3000');

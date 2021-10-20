@@ -4,6 +4,8 @@ const playload = {
     stdid: "B6220662",
     name: "Phuwadon Decharam",
     major: "CPE",
+    iat: 1590383029,
+    exp: 1590383329
 };
 
 const key = "MY_KEY";

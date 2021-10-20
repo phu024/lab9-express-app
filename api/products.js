@@ -1,19 +1,19 @@
 var expressFunction = require('express');
 const router = expressFunction.Router();
-const Authorization = require('../config/authorize')
+const authorization = require('../config/authorize')
 
-const product = [{
-    type: 'cpe',
+const products = [{
+    type: 'cpu',
     id: '10001',
-    name: 'Tntel Core i7 Gen 10th',
-    detail: 'Yhe Intel Core i7-10750H is a high-end processor',
+    name: 'Intel Core i7 Gen 10th',
+    detail: 'The Intel Core i7-10750H is a high-end processor',
     quantity: 10,
     price: 10
 }];
 
 router.route('/products')
-    .get(Authorization, (req, res) => {
-        res.status(200).json(product);
+    .get(authorization, (req, res) => {
+        res.status(200).json(products);
     })
 
 module.exports = router

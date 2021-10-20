@@ -2,11 +2,14 @@ const jwt = require('jsonwebtoken')
 
 const key = 'MY_KEY';
 
-const Authorization = ((req, res, next) => {
-    const token = req.headers['Authorization'];
+const authorization = ((req, res, next) => {
+    const token = req.headers['authorization'];
 
     if (token === undefined) {
-        return res.status(401).json({ "status": 401, "message": 'Unauthorized' })
+        return res.status(401).json({
+            "status": 401,
+            "message": 'Unauthorized'
+        })
     } else {
         jwt.verify(token, key, (err, decode) => {
             if (err) {
@@ -19,4 +22,4 @@ const Authorization = ((req, res, next) => {
     }
 })
 
-module.exports = Authorization
+module.exports = authorization
